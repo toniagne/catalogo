@@ -1,0 +1,33 @@
+<ion-modal-view ng-controller="EditorialCtrl" class="wishlist">
+
+<ion-header-bar class="pinro-header header-shadow">
+  
+      <button class="button button-clear text-button" ng-click="closeWishlistModal()">Close</button>
+   
+    <h1 class="title">Wishlist</h1>
+<button class="button button-clear text-button text-button-right  " ng-click="editWishlist = !editWishlist">
+	<span ng-if="!editWishlist" class="color-light-grey">EDIT</span>
+	<span ng-if="editWishlist" class="color-grapefruit">DELETE</span>
+	</button>
+  
+
+  </ion-header-bar>
+
+        
+	<ion-content>
+
+<div class="product-list">
+			<ul>
+				<li class="list-item" ng-repeat="item in productList">
+					<ion-checkbox ng-if="editWishlist" ng-class="{'checkbox-assertive': item.selected}" ng-model="item.selected"></ion-checkbox>
+
+					<div class="product-image"  ng-click="goToProduct(123)" style="background: url('{{item.imgUrl}}'); background-size:contain; background-repeat: no-repeat; height: 200px;">
+					</div>
+					<h5  ng-click="goToProduct(123)">{{item.name}}</h5>
+					<small class="category-name">{{item.category}}</small>
+					<small class="price">{{item.price}} GBP</small>
+				</li>
+			</ul>
+		</div>
+</ion-content>
+</ion-modal-view>

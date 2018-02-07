@@ -1,0 +1,48 @@
+<ion-modal-view ng-controller="EditorialCtrl" class="profile" hide-nav-bar="true">
+
+<ion-content>
+
+
+<div class="cover-photo" style="background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url('img/profile-image@2x.jpg');background-size: cover;">
+ <button class="button button-clear text-button" ng-click="closeProfileModal()">CLOSE</button>
+    <div class="profile-info">
+        <h1 class="regular-font">Natalia Badiuk</h1>
+        <p class="regular-font">Lviv, Ukraine</p>
+    </div>
+</div>
+
+ <div class="title">
+     <h4>My Profile</h4>
+ </div>
+
+<div class="row tab">
+    <div class="col" ng-click="show = 'orders'"  ng-class="{'color-warm-grey': show=='orders'}">
+        <h5 ng-class="{'color-light-grey': show=='offers'}">{{productList.length}}</h5>
+        orders
+    </div>
+    <div class="col" ng-click="show = 'offers'" ng-class="{'color-warm-grey': show=='offers'}">
+        <h5 ng-class="{'color-light-grey': show=='orders'}">{{offerImages.length}}</h5>
+        offers
+    </div>
+</div>
+
+<div class="product-list" ng-if="show == 'orders'">
+			<ul>
+				<li class="list-item" ng-repeat="item in productList | orderBy:filterBy | filter:search" ng-click="goToProduct(123)">
+					<div class="product-image" style="background: url('{{item.imgUrl}}'); background-size:contain; background-repeat: no-repeat; height: 200px;">
+					</div>
+					<h5>{{item.name}}</h5>
+					<small class="category-name">{{item.category}}</small>
+					<small class="price">{{item.price}} GBP</small>
+				</li>
+			</ul>
+		</div>
+
+<div class="offer-list" ng-if="show == 'offers'">
+    
+    <img ng-src="{{offer.url}}" ng-repeat="offer in offerImages" width="100%">
+
+</div>
+
+</ion-content>
+</ion-modal-view>

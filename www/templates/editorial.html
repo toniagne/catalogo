@@ -1,0 +1,44 @@
+<ion-view view-title="Catálogo" hide-back-button="false">
+	<ion-content>
+
+		<div class="offer-header">
+			<img src="img/banner-white.jpg" width="100%">
+		</div>
+
+<div>
+  	<ion-list >
+			<ion-item class="editorial-list" ng-repeat="item in promotionalProductList" ui-sref="app.single({id: 123})">
+				<img ng-src={{item.imgUrl}}>
+        <h1>{{item.name}}</h1>
+        <p>{{item.price}} GBP</p>
+			</ion-item>
+		</ion-list>
+</div>
+		<div class="product-list">
+			<ul>
+				<li class="list-item" ng-repeat="item in productList | limitTo: 4" ui-sref="app.single({id: 123})">
+					<div class="product-image" style="background: url('{{item.imgUrl}}'); background-size:contain; background-repeat: no-repeat; height: 200px;">
+					</div>
+					<h5>{{item.name}}</h5>
+					<small class="category-name">{{item.category}}</small>
+					<small class="price">{{item.price}} GBP</small>
+				</li>
+			</ul>
+		</div>
+
+
+		<ion-list class="editorial-footer-list">
+			<ion-item ui-sref="app.single({id: 123})">
+			Blog	
+			</ion-item>
+			<ion-item>
+				Payment &amp; Delivery
+			</ion-item>
+			<ion-item>
+				Find Nearest Shop
+			</ion-item>
+		</ion-list>
+
+
+	</ion-content>
+</ion-view>

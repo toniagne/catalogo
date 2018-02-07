@@ -1,0 +1,67 @@
+<ion-modal-view class="cart" ng-controller="EditorialCtrl">
+
+<ion-header-bar class="pinro-header header-shadow">
+    
+      <button class="button button-clear text-button" ng-click="closeCartModal()">Close</button>
+   
+    <h1 class="title">Carrinho</h1>
+  </ion-header-bar>
+
+        
+	<ion-content>
+
+<div class="cart-list">
+			
+            <ion-list >
+  <ion-item ng-repeat="item in productList | limitTo: 2" class="item-thumbnail-left item-icon-right">
+            <img ng-src="{{item.imgUrl}}">
+             <h5>{{item.name}}</h5>
+                            <small class="category-name">{{item.category}}</small>
+                            <small class="size">Size: S</small>
+                            <small class="">Est. Delivery 5-6 days</small>
+                            <h3 class="price">{{item.price}} GBP</h3>
+            <i class="icon ion-android-close color-light-grey"></i>
+  </ion-item>
+            </ion-list>
+		</div>
+
+        <div class="price-overview animated fadeInUpBig">
+            <div class="row">
+                <div class="col">
+                    Total:
+                </div>
+                <div class="col">
+                    R$ 150,00
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Estimated Tax:
+                </div>
+                <div class="col">
+                    R$ 15,00
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Frete & Envio:
+                </div>
+                <div class="col color-grapefruit">
+                    GRÁTIS
+                </div>
+            </div>
+            <div class="row total">
+                <div class="col">
+                    Total
+                </div>
+                <div class="col">
+                    R$ 165,00
+                </div>
+            </div>
+        </div>
+            <div class="footer-button  animated fadeInUpBig">
+             <button class="button button-dark button-block button-round button-outline " ng-click="closeCartModal()" ui-sref="app.payment_step1">Finalizar</button>
+            </div>
+
+</ion-content>
+</ion-modal-view>

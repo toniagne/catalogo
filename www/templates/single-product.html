@@ -1,0 +1,94 @@
+<ion-view view-title="Visvim">
+	<ion-content class="single-product-page">
+		<div class="slider-holder">
+			<ion-slides slider="slider">
+				<ion-slide-page ng-repeat="image in product.images">
+					<img ng-src="{{image.url}}">
+				</ion-slide-page>
+			</ion-slides>
+		</div>
+		<div class="animated pulse">
+			<h1 class="regular-font">{{product.name}}</h1>
+			<h5 class="color-warm-grey regular-font">{{product.category}}</h5>
+			<h3>{{product.price}} USD</h3>
+		</div>
+		<div class="product-description">
+			<div class="section">
+				<h5>Product Description</h5>
+				<p class="color-warm-grey">{{product.description}}</p>
+			</div>
+			<!--product variation-->
+			<div class="section">
+				<ul class="option-radio">
+					<li>
+						<label>
+                        <input type="radio" name="color" ng-model="color" value="red" >
+												<div class="with-color" style="background: #000">
+												</div>
+                    </label>
+					</li>
+					<li>
+						<label>
+                        <input type="radio" name="color" ng-model="color" value="blue" >
+												<div class="with-color" style="background: #ff5252">
+												</div>
+                    </label>
+					</li>
+					<li>
+						<label>
+                        <input type="radio" name="color" ng-model="color" value="green" >
+												<div class="with-color" style="background: #FFAF4A">
+												</div>
+                    </label>
+					</li>
+				</ul>
+			</div>
+			<div class="section">
+				<ul class="option-radio">
+					<li>
+						<label>
+													<input type="radio" name="size" ng-model="size" value="s" >
+													<div class="with-text" >
+														<span>S</span>
+													</div>
+											</label>
+					</li>
+					<li>
+						<label>
+													<input type="radio" name="size" ng-model="size" value="m" >
+													<div class="with-text" >
+														<span>M</span>
+													</div>
+											</label>
+					</li>
+					<li>
+						<label>
+													<input type="radio" name="size" ng-model="size" value="l" >
+													<div class="with-text" >
+														<span>L</span>
+													</div>
+											</label>
+					</li>
+					<li>
+						<label>
+													<input type="radio" name="size" ng-model="size" value="xl" >
+													<div class="with-text" >
+														<span>XL</span>
+													</div>
+											</label>
+					</li>
+				</ul>
+			</div>
+		</div>
+		</div>
+		<!--footer button-->
+		<div>
+			<button class="button button-block button-round button-dark" ng-click="addToCart()">
+  add to cart
+</button>
+			<button class="button button-block button-round button-dark button-outline">
+  add to wishlist
+</button>
+		</div>
+	</ion-content>
+</ion-view>
