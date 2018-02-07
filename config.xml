@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.catalogo.garagee" version="0.0.1" versionCode="001" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Catálogo de Produtos</name>
+    <name>Nova.com</name>
     <description>
         Lista de pedidos catalogo
     </description>
@@ -35,7 +35,6 @@
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />   
-    <plugin name="cordova-plugin-foxitpdf" />
 
     
     
